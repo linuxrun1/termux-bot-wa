@@ -3,6 +3,16 @@ const figlet = require('figlet')
 let { spawn } = require('child_process')
 let path = require('path')
 const CFonts  = require('cfonts')
+const app = express()
+const PORT = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
+})
 
 lolcatjs.options.seed = Math.round(Math.random() * 1000);
 lolcatjs.options.colors = true;
